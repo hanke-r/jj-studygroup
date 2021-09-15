@@ -15,4 +15,15 @@ public class LoginController {
     public String login(){
         return "login";
     }
+
+
+    /**
+     * register method
+     *
+     * @return
+     */
+    @GetMapping("/register")
+    public String register() {
+        return "register";
+    }
 }
