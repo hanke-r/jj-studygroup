@@ -1,6 +1,33 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
     <head th:replace="fragments/fragment.html :: header"/>
+    <style>
+        .select {
+            padding: 15px 10px;
+        }
+        .select input[type=radio]{
+            display: none;
+        }
+        .select input[type=radio]+label{
+            display: inline-block;
+            cursor: pointer;
+            height: 24px;
+            width: 90px;
+            border: 1px solid #333;
+            line-height: 24px;
+            text-align: center;
+            font-weight:bold;
+            font-size:13px;
+        }
+        .select input[type=radio]+label{
+            background-color: #fff;
+            color: #333;
+        }
+        .select input[type=radio]:checked+label{
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
     <body class="bg-primary">
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
@@ -8,7 +35,7 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-7">
-                                <div class="card shadow-lg border-0 rounded-lg mt-5" style="margin-top: 15rem !important;">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5" style="margin-top: 10rem !important;">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4" th:text="#{register}"></h3></div>
                                     <div class="card-body">
                                         <form>
@@ -17,8 +44,15 @@
                                                 <label for="inputFirstName" th:text="#{name}"></label>
                                             </div>
                                             <div class="form-floating mb-3">
+                                                <input class="form-control" id="inputId" type="email" />
+                                                <label for="inputId" th:text="#{id}"></label>
+                                            </div>
+                                            <div class="mt-4 mb-0">
+                                                <div class="d-grid"><a class="btn btn-secondary btn-block" href="login.html" th:text="#{duplicate_confirmation}">duplicated id</a></div>
+                                            </div>
+                                            <div class="form-floating mb-3">
                                                 <input class="form-control" id="inputEmail" type="email" />
-                                                <label for="inputEmail" th:text="#{id}"></label>
+                                                <label for="inputEmail" th:text="#{email}"></label>
                                             </div>
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
@@ -33,6 +67,10 @@
                                                         <label for="inputPasswordConfirm" th:text="#{password_check}">Confirm Password</label>
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <div class="select">
+                                                <input type="radio" id="male" name="sex" /><label for="male" th:text="#{male}"></label>
+                                                <input type="radio" id="female" name="sex" /><label for="female" th:text="#{female}"></label>
                                             </div>
                                             <div class="mt-4 mb-0">
                                                 <div class="d-grid"><a class="btn btn-primary btn-block" href="login.html" th:text="#{register}">Create Account</a></div>
