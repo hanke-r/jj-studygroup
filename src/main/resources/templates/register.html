@@ -44,15 +44,33 @@
                                                 <label for="inputFirstName" th:text="#{name}"></label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputId" type="email" />
+                                                <input class="form-control" id="inputId" type="id" />
                                                 <label for="inputId" th:text="#{id}"></label>
+                                                <button class="btn btn-secondary btn-block" href="#" th:text="#{duplicate_confirmation}"
+                                                        id="duplicatedCheck"
+                                                    style="position: absolute;
+                                                           top: 10px;
+                                                           right: 10px;">
+                                                </button>
                                             </div>
-                                            <div class="mt-4 mb-0">
-                                                <div class="d-grid"><a class="btn btn-secondary btn-block" href="login.html" th:text="#{duplicate_confirmation}">duplicated id</a></div>
-                                            </div>
+<!--                                            <div class="form-floating mb-3">-->
+<!--                                                <div class="d-grid">-->
+<!--                                                    <a class="btn btn-secondary btn-block" href="login.html" th:text="#{duplicate_confirmation}">duplicated id</a>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="inputEmail" type="email" />
                                                 <label for="inputEmail" th:text="#{email}"></label>
+                                                <button class="btn btn-secondary btn-block" href="#" th:text="#{certified_email}"
+                                                        id="certEmail"
+                                                        style="position: absolute;
+                                                           top: 10px;
+                                                           right: 10px;">
+                                                </button>
+                                            </div>
+                                            <div class="form-floating mb-3" style="display: none">
+                                                <input class="form-control" id="certCode" type="text" />
+                                                <label for="certCode" th:text="#{cert_code}"></label>
                                             </div>
                                             <div class="row mb-3">
                                                 <div class="col-md-6">

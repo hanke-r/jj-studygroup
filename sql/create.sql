@@ -22,3 +22,25 @@ ALTER TABLE public."Member"
 
 COMMENT ON TABLE public."Member"
     IS '회원 테이블';
+
+
+
+-- Table: public.confirm_token
+
+-- DROP TABLE public.confirm_token;
+
+CREATE TABLE public.confirm_token
+(
+    token_id character(36) COLLATE pg_catalog."default" NOT NULL,
+    expiration_date date,
+    expired boolean,
+    mid bigint NOT NULL,
+    create_date date,
+    last_modified_date date,
+    CONSTRAINT confirm_token_pkey PRIMARY KEY (token_id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.confirm_token
+    OWNER to postgres;
