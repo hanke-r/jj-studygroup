@@ -61,7 +61,7 @@
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="inputEmail" type="email" />
                                                 <label for="inputEmail" th:text="#{email}"></label>
-                                                <button class="btn btn-secondary btn-block" href="#" th:text="#{certified_email}"
+                                                <button class="btn btn-secondary btn-block" th:text="#{certified_email}"
                                                         id="certEmail"
                                                         style="position: absolute;
                                                            top: 10px;
@@ -113,5 +113,6 @@
             </div>
         </div>
         <script th:replace="/fragments/fragment.html :: LangChangeEvent"></script>
+        <script th:replace="/fragments/fragment.html :: CertifiedEmail"></script>
     </body>
 </html>

@@ -3,6 +3,7 @@ package com.jsg.jjstudygroup.controller;
 import com.jsg.jjstudygroup.service.LoginService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -35,9 +36,13 @@ public class LoginController {
         return "register";
     }
 
-    @PostMapping("/email")
-    public void emailAuth(@RequestParam("email") String email) throws Exception{
-//        loginService.sendSimpleMessage(email.get("email"));
 
+    @PostMapping("/certifiedEmail")
+    public String certifiedEmail(@RequestParam("email") String email, Model model){
+
+        loginService.mailSend(email);
+
+        return "jsonView";
     }
+
 }
