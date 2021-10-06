@@ -49,6 +49,12 @@ public class EmailConfig {
     @Value("${spring.mail.default.encoding}")
     private String encoding;
 
+//    @Value("${spring.mail.title}")
+//    private String text;
+//
+//    @Value("${spring.mail.content}")
+//    private String content;
+
 
     @Bean
     public JavaMailSender javaMailSender(){

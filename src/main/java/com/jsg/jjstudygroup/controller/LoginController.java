@@ -38,9 +38,9 @@ public class LoginController {
 
 
     @PostMapping("/certifiedEmail")
-    public String certifiedEmail(@RequestParam("email") String email, Model model){
+    public String certifiedEmail(@RequestParam("email") String email, @RequestParam("lang") String lang){
 
-        loginService.mailSend(email);
+        loginService.mailSend(email, lang);
 
         return "jsonView";
     }
