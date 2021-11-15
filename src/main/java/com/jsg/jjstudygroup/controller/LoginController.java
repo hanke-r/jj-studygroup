@@ -1,5 +1,6 @@
 package com.jsg.jjstudygroup.controller;
 
+import com.jsg.jjstudygroup.dto.LoginVO;
 import com.jsg.jjstudygroup.service.LoginService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -23,6 +24,17 @@ public class LoginController {
     @GetMapping("/login")
     public String login(){
         return "login";
+    }
+
+
+    @PostMapping("/login")
+    public String postLogin(Model model, LoginVO loginVO){
+
+        System.out.println("id = " + loginVO.getId());
+
+        model.addAttribute("rs", "login success!");
+
+        return "jsonView";
     }
 
 

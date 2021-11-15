@@ -17,7 +17,7 @@
                                                 <label for="inputEmail" th:text="#{id}">Email address</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputPassword" type="password" />
+                                                <input class="form-control" id="inputPassword" type="password" autocomplete="on" />
                                                 <label for="inputPassword" th:text="#{password}">Password</label>
                                             </div>
                                             <div class="form-check mb-3">
@@ -26,7 +26,7 @@
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <a class="small" href="password.html" th:text="#{password_search}">Forgot Password?</a>
-                                                <a class="btn btn-primary" href="index.html" th:text="#{login}">Login</a>
+                                                <a class="btn btn-primary" href="javascript:loginCheck();" th:text="#{login}">Login</a>
                                             </div>
                                         </form>
                                     </div>
@@ -49,5 +49,6 @@
         </div>
 
         <script th:replace="/fragments/fragment.html :: LangChangeEvent"></script>
+        <script th:replace="/fragments/fragment.html :: login"></script>
     </body>
 </html>

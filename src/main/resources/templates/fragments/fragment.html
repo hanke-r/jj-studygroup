@@ -30,9 +30,38 @@
         $("#language").change(function(){
             location.href="?lang=" + $(this).val();
         });
-
-
     });
+</script>
+
+<script th:fragment="login">
+	function loginCheck(){
+        var id = $("#inputEmail").val();
+        var password = $("#inputPassword").val();
+
+        if(id == "" || id == null){
+            alert("ID를 입력해주세요.");
+        } else if(password == "" || password == null){
+            alert("password를 입력해주세요");
+        }
+
+        var data = {
+            id : id,
+	        password : password
+        };
+
+
+        $.ajax({
+	        url : "/login",
+	        type : "post",
+	        data : data,
+	        success : [function(){
+              console.log(1234);
+	        }],
+        });
+
+
+	}
+
 </script>
 
 <!-- email 인증-->
